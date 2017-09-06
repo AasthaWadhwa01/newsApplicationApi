@@ -1,0 +1,36 @@
+<input
+   (keyup)="searchTerm.next($event.target.value)"><ul *ngIf="results">
+ <li *ngFor="let result of results | slice:0:9">
+   <a href="{{ result.latest }}" target="_blank">
+     {{ result.q }}
+   </a>  </li>
+</ul><input type="button" name="click" (click)="getDetails()">
+
+
+
+<!--
+<form class="form-horizontal">
+<fieldset>
+
+  
+<div class="form-group">
+  <label class="col-md-4 control-label" for="searchinput">Search Input</label>
+  <div class="col-md-8">
+    <input id="searchinput" name="searchinput" placeholder="search" class="form-control input-md" type="search">
+
+    <hr>
+
+    <div class="form-group">
+  <label class="col-md-8 control-label" for="searchbutton">view results</label>
+  <div class="col-md-4">
+    <button id="searchbutton" name="searchbutton" class="btn btn-primary">search</button>
+  </div>
+</div>
+  </div>
+
+ <h1 class="jumbotron"> hello</h1>     
+</div>
+
+
+</fieldset>
+</form> -->
