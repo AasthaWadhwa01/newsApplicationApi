@@ -11,17 +11,16 @@ import  { Subject } from 'rxjs/Subject';
 export class AppComponent {
 
 	results: Object;
-	searchTerm = new Subject<string>();
 
 	constructor(private newsService: NewsService){}
 
-	getDetails(){
-		this.newsService.searchEntries()
+	getDetails(news){
+		this.newsService.searchEntries(news.value)
 				.subscribe(results => {
 					this.results = results.results;
+					
 				})
 	}
 
   title = 'app';
 }
-
