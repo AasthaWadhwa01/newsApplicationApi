@@ -10,15 +10,15 @@ import  { Subject } from 'rxjs/Subject';
 })
 export class AppComponent {
 
-	results: Object;
+	news: any=[];
 
 	constructor(private newsService: NewsService){}
 
-	getDetails(news){
-		this.newsService.searchEntries(news.value)
-				.subscribe(results => {
-					this.results = results.results;
-					
+	getDetails(newsChannel){
+		this.newsService.searchEntries(newsChannel.value)
+					.subscribe(news => {
+					this.news = news.articles;
+
 				})
 	}
 

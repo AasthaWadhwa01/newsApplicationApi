@@ -7,9 +7,9 @@ import 'rxjs/add/operator/map';
  export class NewsService {
    constructor(private http: Http) {}
      
-searchEntries(news: any) {
+searchEntries(newsChannel: any) {
   return this.http
-     .get('https://newsapi.org/v1/articles?source='+news+'&sortBy=top&apiKey=983847a33bfc4179943d980daedd4142')
+     .get('https://newsapi.org/v1/articles?source='+newsChannel+'&sortBy=top&apiKey=983847a33bfc4179943d980daedd4142')
         .map(response => response.json());
       }
 }

@@ -4,11 +4,13 @@ import { NewsService } from './app.service'
 import { AppComponent } from './app.component';
 import { Http }       from '@angular/http';
 import { HttpModule }  from '@angular/http';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
