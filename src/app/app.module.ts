@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NewsService } from './app.service' 
+import { NewsService } from './search/search.service' 
 import { AppComponent } from './app.component';
 import { Http }       from '@angular/http';
 import { HttpModule }  from '@angular/http';
 import { SearchComponent } from './search/search.component';
-
 
 @NgModule({
   declarations: [
@@ -16,7 +15,7 @@ import { SearchComponent } from './search/search.component';
     BrowserModule,
     HttpModule
   ],
-  providers: [],
+  providers: [NewsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,12 +1,2 @@
-<div>
-  <input  value="" name="search"#newsChannel>
-  <button type="submit" (click)="getDetails(newsChannel)">Get Channel</button>
+<app-search></app-search>
 
-    <div *ngFor="let item of news">
-    <a href="{{item.url}}"> {{item.title}}</a>{{item.description}}<br>
-    <img src="{{item.urlToImage}}" width="200px" height="300px">
-    <hr>
-    </div>
-
-
-</div>

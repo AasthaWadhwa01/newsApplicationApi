@@ -1,15 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import  { NewsService } from './search.service';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css']
+  styleUrls: ['./search.component.css'],
+   providers: [NewsService]
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
+  news: any=[];
+  post: any[];
 
-  constructor() { }
+	constructor(private newsService: NewsService){}
+	ngOnInit(){
+		this.newsService.searchNewsChannel()
+		.subscribe((post)=>{
+			this.post=post.sources;
+			console.log(post.sources)
+		});
+	}
 
-  ngOnInit() {
-  }
+	getDetails(newsChannel){
+		this.newsService.searchEntries(newsChannel.value)
+					.subscribe(news => {
+					this.news = news.articles;
+
+				})
+	}
 
 }

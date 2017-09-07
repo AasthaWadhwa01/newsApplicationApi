@@ -1,3 +1,39 @@
-<p>
-  search works!
-</p>
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+
+    <select name="search"#newsChannel>
+    	<option *ngFor="let news of post" #name [value]="news.id">
+    		{{news.name}}
+    	</option>
+    </select>
+      <a class="btn btn-outline-success my-2 my-sm-0" (click)="getDetails(newsChannel)" >Search</a>
+  </div>
+</nav>
+<div>
+  <!-- <input  value="" name="search"#newsChannel>
+  <button type="submit" (click)="getDetails(newsChannel)">Get Channel</button>
+   -->
+    <div *ngFor="let item of news">
+    <a href="{{item.url}}"> {{item.title}}</a>{{item.description}}<br>
+    <img src="{{item.urlToImage}}" width="200px" height="300px">
+    <hr>
+    </div>
+</div> 
+</div>
