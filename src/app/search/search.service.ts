@@ -27,4 +27,16 @@ searchEntries(newsChannel: any) {
       	return this.http.get('https://newsapi.org/v1/sources?language=en')
       	.map(res=>res.json());
       }
+    
+    save(data){
+      var expressApi='http://localhost:3001/bookpost'
+      return this.http.post(expressApi,data)
+      .map((res: Response)=>res.json())
+}  
+
+    showFavList(){
+      var expressApi='http://localhost:3001/bookstore'
+      return this.http.get(expressApi)
+      .map((res: Response)=>res.json())
+    }
 }

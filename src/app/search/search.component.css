@@ -1,0 +1,17 @@
+/* heading style */
+.page-header{
+/* background-image: url("../assests/presse10.jpg"); */
+	/* color: white; */
+	font-family: cursive;
+	padding: 5px;
+	text-align:center;
+}
+/* carousel style */
+#myCarousel{
+	margin-top: 20px;
+}
+
+.mainImage{
+	height: 150px;
+	width: 1100px;
+}

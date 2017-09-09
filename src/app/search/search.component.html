@@ -1,6 +1,13 @@
 <div class="container">
+<!-- heading -->
+<div class="page-header">
+  <img class="img-responsive mainImage" src="../assets/presse10.jpg">
+    <h1><strong>NEWS_18</strong></h1>
+  
+</div>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#">News_18</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,7 +18,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#" (onClick)="showFavorites()">Favorites</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
@@ -19,21 +26,108 @@
     </ul>
 
     <select name="search"#newsChannel>
-    	<option *ngFor="let news of post" #name [value]="news.id">
-    		{{news.name}}
-    	</option>
+      <option *ngFor="let news of post" #name [value]="news.id">
+        {{news.name}}
+      </option>
     </select>
       <a class="btn btn-outline-success my-2 my-sm-0" (click)="getDetails(newsChannel)" >Search</a>
-  </div>
-</nav>
-<div>
-  <!-- <input  value="" name="search"#newsChannel>
-  <button type="submit" (click)="getDetails(newsChannel)">Get Channel</button>
-   -->
-    <div *ngFor="let item of news">
-    <a href="{{item.url}}"> {{item.title}}</a>{{item.description}}<br>
-    <img src="{{item.urlToImage}}" width="200px" height="300px">
-    <hr>
-    </div>
-</div> 
+      </div>
+  </nav>
+
+  <div class="row">
+   <div *ngIf="list">
+     <div *ngFor="let lists of list">
+       <ul>
+         <li>{{lists.title}}</li>
+         <button type="button" class="btn btn-outline-success">Edit</button>
+         <button type="button" class="btn btn-outline-success">Delete</button>
+         <!-- <button type="button" class="btn btn-outline-success" (click)="showFavAll()">Details</button> -->
+       </ul>
+     </div>
+   </div>
 </div>
+
+
+    <div class="container text-center">
+
+    <div class="container">
+   <div class="card-group">
+     <div class="card cardsize">
+       <div class="row">
+         <div class='col-md-4' *ngFor="let news of news">
+           <img class="card-img-top cardimg" src="{{news.urlToImage}}" alt="No image"/>
+           <div class="card-body">
+             <h4 class="card-title"> <a href="{{news.url}}" target="blank">{{news.title}}</a></h4>
+             <p class="card-text">{{news.description}}</p>
+             <a href="#" class="btn btn-primary" (click)="addNews(item)">Add</a>
+           </div>
+           <div class="card-footer text-muted">{{news.publishedAt}}</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+ 
+  <!--   <div *ngFor="let item of news">
+  <a href="{{item.url}}"> {{item.title}}</a>{{item.description}}<br>
+  <img src="{{item.urlToImage}}" width="200px" height="300px">
+  <hr>
+  </div>
+  </div> 
+  </div> -->
+
+
+
+
+    
+    <!--<h1> Click Me </h1>
+     <button class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button> 
+    
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    
+    
+    
+       Wrapper for slides 
+      <div class="carousel-inner">
+    <div class="item active">
+     <img class="img-responsive" src="../assets/bestnewsbuilding.png" alt="...">
+      <div class="carousel-caption">
+        One Image
+      </div>
+    </div>
+    <div class="item">
+      <img class="img-responsive" src="../assets/page-news.jpg" alt="...">
+      <div class="carousel-caption">
+        Another Image
+      </div>
+    </div>
+     <div class="item">
+      <img class="img-responsive" src="../assets/newsbuildinghbsc.jpg" alt="...">
+      <div class="carousel-caption">
+        Another Image
+      </div>
+    </div>
+      </div>
+     Controls 
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" 
+    data-slide ="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button"          data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+
+     </div>
+    </div>
+      </div>
+    </div>
+    </div>
+    -->
+      
+
+
