@@ -1,3 +1,16 @@
-<p>
-  news-list works!
-</p>
+<div class="container">
+   <div class="card-group">
+     <div class="card cardsize">
+       <div class="row">
+         <div class='col-md-4' *ngFor="let news of newslist">
+           <img class="card-img-top cardimg" src="{{news.urlToImage}}" alt="No image"/>
+           <div class="card-body">
+             <h4 class="card-title"> <a href="{{news.url}}" target="blank">{{news.title}}</a></h4>
+             <p class="card-text">{{news.description}}</p>
+             <a href="#" class="btn btn-primary" (click)="addNews(news)">Add</a>
+           </div>
+           <div class="card-footer text-muted">{{news.publishedAt}}</div>
+         </div>
+       </div>
+     </div>
+</div>

@@ -1,3 +1,21 @@
-<p>
-  fav-list works!
-</p>
+<div class="container">
+<!-- <button type="button" class="btn btn-info" (click)="favorite()">Favorite</button> -->
+   
+
+<button type="button" class="btn btn-primary btn-lg" (click)=showFavorites()>fav list</button>
+   <div class="card-group">
+     <div class="card cardsize">
+       <div class="row">
+         <div class='col-md-4' *ngFor="let data of list">
+           <img class="card-img-top cardimg" src="{{data.urlToImage}}" alt="No image" height="250px" width="350px"/>
+           <div class="card-body">
+             <h4 class="card-title"> <a href="{{data.url}}" target="blank">{{data.title}}</a></h4>
+             <p class="card-text">{{data.description}}</p>
+             <a class="btn btn-danger" (click)="deleteItem(data._id)">Delete</a>
+           </div>
+           <div class="card-footer text-muted">{{data.publishedAt}} fyudutd</div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

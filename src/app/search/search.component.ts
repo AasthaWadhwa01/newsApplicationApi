@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import  { NewsService } from './search.service';
 
 @Component({
@@ -6,15 +6,16 @@ import  { NewsService } from './search.service';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {
+export class SearchComponent  {
   news: any=[];
   post: any[];
 
-  data: any={};
-  list: any=[];
+ /* data: any={};*/
+  /*list: any=[];*/
   favourite: any={};
 
 constructor(private newsService: NewsService){}
+  @Output() newslist= new EventEmitter<any>();
 	ngOnInit(){
 		this.newsService.searchNewsChannel()
 		.subscribe((post)=>{
@@ -27,11 +28,12 @@ constructor(private newsService: NewsService){}
 		this.newsService.searchEntries(newsChannel.value)
 					.subscribe(news => {
 					this.news = news.articles;
+          this.newslist.emit(this.news);
 
 				})
 	}
 
-	addNews(data){
+	/*addNews(data){
          console.log(data)
          this.data={
          "title":data.title        
@@ -40,11 +42,11 @@ constructor(private newsService: NewsService){}
          console.log(data);
          })
 }
-
-	showFavorites(){
+*/
+	/*showFavorites(){
 		this.newsService.showFavList()
        .subscribe((data)=>{
          this.list=data;
        })
-	}
+	}*/
 }

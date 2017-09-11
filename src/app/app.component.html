@@ -1,2 +1,4 @@
-<app-search></app-search>
+<app-search (newslist)="updateNewslist($event)"></app-search>
+<app-fav-list></app-fav-list>
+<app-news-list [newslist]="newslist"></app-news-list>
 

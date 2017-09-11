@@ -5,4 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+	public newslist: any;
+
+	updateNewslist(event){
+		console.log(event)
+		this.newslist=event
+	}
+}

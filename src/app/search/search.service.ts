@@ -30,6 +30,7 @@ searchEntries(newsChannel: any) {
     
     save(data){
       var expressApi='http://localhost:3001/bookpost'
+      console.log(data);
       return this.http.post(expressApi,data)
       .map((res: Response)=>res.json())
 }  
@@ -39,4 +40,13 @@ searchEntries(newsChannel: any) {
       return this.http.get(expressApi)
       .map((res: Response)=>res.json())
     }
+
+
+    delete(id){
+      var expressApi='http://localhost:3001/'+id      
+      return this.http.delete(expressApi)
+      .map((res: Response)=>res.json())
+}  
+
+
 }

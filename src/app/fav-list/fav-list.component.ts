@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import  { NewsService } from '../search/search.service';
+
 
 @Component({
   selector: 'app-fav-list',
   templateUrl: './fav-list.component.html',
   styleUrls: ['./fav-list.component.css']
 })
-export class FavListComponent implements OnInit {
+export class FavListComponent  {
+list: any=[];
+  constructor(private newsService: NewsService) { }
 
-  constructor() { }
+ showFavorites(){
+		this.newsService.showFavList()
+       .subscribe((data)=>{
+         this.list=data;
+         console.log(this.list)
+       })
+	}
 
-  ngOnInit() {
+
+   deleteItem(id){
+    this.newsService.delete(id).subscribe((data)=>{
+      this.list=data;
+    })
+
   }
-
 }
