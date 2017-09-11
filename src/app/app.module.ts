@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import { Http }       from '@angular/http';
 import { HttpModule }  from '@angular/http';
 import { SearchComponent } from './search/search.component';
+import { FavListComponent } from './fav-list/fav-list.component';
+import { NewsListComponent } from './news-list/news-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    FavListComponent,
+    NewsListComponent
   ],
   imports: [
     BrowserModule,

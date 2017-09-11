@@ -4,19 +4,17 @@ import  { NewsService } from './search.service';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
-  styleUrls: ['./search.component.css'],      
-   providers: [NewsService]
+  styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
   news: any=[];
   post: any[];
 
   data: any={};
-
   list: any=[];
-
   favourite: any={};
-	constructor(private newsService: NewsService){}
+
+constructor(private newsService: NewsService){}
 	ngOnInit(){
 		this.newsService.searchNewsChannel()
 		.subscribe((post)=>{
@@ -43,12 +41,10 @@ export class SearchComponent {
          })
 }
 
-
 	showFavorites(){
 		this.newsService.showFavList()
        .subscribe((data)=>{
          this.list=data;
        })
 	}
-
 }

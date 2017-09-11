@@ -1,56 +1,34 @@
 <div class="container">
 <!-- heading -->
 <div class="page-header">
-  <img class="img-responsive mainImage" src="../assets/presse10.jpg">
+  <img class="img-responsive mainImage" src="../assets/newsimage.jpg">
     <h1><strong>NEWS_18</strong></h1>
-  
 </div>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!--nav bar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">News_18</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+   <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> 
       <li class="nav-item active">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#" (onClick)="showFavorites()">Favorites</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+    </ul> 
 
-    <select name="search"#newsChannel>
+  <select name="search"#newsChannel>
       <option *ngFor="let news of post" #name [value]="news.id">
         {{news.name}}
       </option>
     </select>
-      <a class="btn btn-outline-success my-2 my-sm-0" (click)="getDetails(newsChannel)" >Search</a>
-      </div>
-  </nav>
+  <a class="btn btn-outline-success my-2 my-sm-0" (click)="getDetails(newsChannel)">Search</a>
+ </div>
+</nav>
+<!--nav bar end -->
 
-  <div class="row">
-   <div *ngIf="list">
-     <div *ngFor="let lists of list">
-       <ul>
-         <li>{{lists.title}}</li>
-         <button type="button" class="btn btn-outline-success">Edit</button>
-         <button type="button" class="btn btn-outline-success">Delete</button>
-         <!-- <button type="button" class="btn btn-outline-success" (click)="showFavAll()">Details</button> -->
-       </ul>
-     </div>
-   </div>
-</div>
-
-
-    <div class="container text-center">
-
-    <div class="container">
+ <div class="container">
    <div class="card-group">
      <div class="card cardsize">
        <div class="row">
@@ -65,8 +43,24 @@
          </div>
        </div>
      </div>
+</div>
+ 
+ <!-- <div class="row">
+   <div *ngIf="list">
+     <div *ngFor="let lists of list">
+       <ul>
+         <li>{{lists.title}}</li>
+         <button type="button" class="btn btn-outline-success">Edit</button>
+         <button type="button" class="btn btn-outline-success">Delete</button>
+         <button type="button" class="btn btn-outline-success" (click)="showFavAll()">Details</button>
+       </ul>
+     </div>
    </div>
- </div>
+  </div>  -->
+
+
+
+
 
 
  
