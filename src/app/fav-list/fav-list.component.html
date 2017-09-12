@@ -1,8 +1,21 @@
 <div class="container">
 <!-- <button type="button" class="btn btn-info" (click)="favorite()">Favorite</button> -->
-   
 
-<button type="button" class="btn btn-primary btn-lg" (click)=showFavorites()>fav list</button>
+
+   
+ <!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="mainjumbotron jumbotron ">
+  <div class="row">
+    <div class="newsjumbotron">
+      <button type="button" class="btn btn-primary btn-lg" (click)=showFavorites()>Bookmarks</button>
+    </div>  
+    
+     
+  </div>
+</div> 
+
+ 
+
    <div class="card-group">
      <div class="card cardsize">
        <div class="row">
@@ -13,9 +26,11 @@
              <p class="card-text">{{data.description}}</p>
              <a class="btn btn-danger" (click)="deleteItem(data._id)">Delete</a>
            </div>
-           <div class="card-footer text-muted">{{data.publishedAt}} fyudutd</div>
+           <div class="card-footer text-muted">{{data.publishedAt}}</div>
          </div>
        </div>
      </div>
    </div>
+
+
  </div>

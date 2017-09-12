@@ -28,6 +28,14 @@ searchEntries(newsChannel: any) {
       	.map(res=>res.json());
       }
     
+
+ searchlatest(){
+        return this.http.get('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=983847a33bfc4179943d980daedd4142')
+        .map(res=>res.json());
+      }
+
+
+
     save(data){
       var expressApi='http://localhost:3001/bookpost'
       console.log(data);
